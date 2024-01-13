@@ -1,9 +1,13 @@
 /*
 
+!src
 !docs
+!main.py
 !LICENSE
 !.github
+!README.md
 !.gitignore
+!requirements.txt
 
 *__pycache__
 *.py[cod]
