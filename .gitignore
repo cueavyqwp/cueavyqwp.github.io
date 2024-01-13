@@ -1,12 +1,16 @@
 /*
 
 !src
+!libs
 !docs
+!posts
+!theme
 !main.py
 !LICENSE
 !.github
 !README.md
 !.gitignore
+!config.json
 !requirements.txt
 
 *__pycache__

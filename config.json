@@ -1,0 +1,8 @@
+{
+    "output": "./docs",
+    "buildtime": false,
+    "apipath": "./src/api",
+    "blacklist_clear": [
+        "CNAME"
+    ]
+}
