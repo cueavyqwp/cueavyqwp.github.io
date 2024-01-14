@@ -5,7 +5,7 @@ path
 import shutil
 import os
 
-__all__ = [ "copytree" ]
+__all__ = [ "checkdir" , "checkfile" , "copytree" ]
 
 def checkdir( path : str ) -> None :
     os.makedirs( path , exist_ok = True )
@@ -14,6 +14,7 @@ def checkfile( path : str ) -> None :
     if os.path.exists( path ) :
         if os.path.isdir( path ) : shutil.rmtree( path )
         else : return
+    checkdir( os.path.split( path )[ 0 ] )
     with open( path , "wb" ) : pass
 
 def copytree( src : str , dst : str ) -> None :
@@ -25,5 +26,5 @@ def copytree( src : str , dst : str ) -> None :
                 paths = list( os.path.split( s ) ) + paths
                 s = paths.pop( 0 )
             path = os.path.join( dst , *( paths[ 4 : ] if paths[ 2 ] == "." else paths[ 3 : ] ) )
-            os.makedirs( os.path.split( path )[ 0 ] , exist_ok = True )
+            os.makedirs( os.path.dirname( path ) , exist_ok = True )
             shutil.copyfile( file , path )

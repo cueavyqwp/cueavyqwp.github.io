@@ -18,20 +18,11 @@ class ArgumentParser( argparse.ArgumentParser ) :
         self.add_argument( "-h" , "--help" , action = "help" , help = lang.get( help ) )
         self.lang = lang
 
-def clear( output : str ) -> None :
-    for path in os.listdir( output ) :
-        if path in config( "blacklist_clear" ) : continue
-        if os.path.isfile( s := ( os.path.join( output , path ) ) ) : os.remove( s )
-        else : shutil.rmtree( s )
-
-def build( output : str , src : str ) -> None :
-    # copy files
-    libs.copytree( src , output )
-
 if __name__ == "__main__" :
     # load configs
+    config_src = "./config.json"
     lang = langful.lang()
-    with libs.config.parser() as config :
+    with libs.config.parser( config_src ) as config :
         config.add( "output" , "./docs" , str )
         config.add( "posts" , "./posts" , str )
         config.add( "source" , "./src" , str )
@@ -49,13 +40,18 @@ if __name__ == "__main__" :
     parser.add_argument( "-b" , "--build" , required = False , action = "store_true" , help = lang.get( "help.build" ) )
     parser.add_argument( "-c" , "--clear" , required = False , action = "store_true" , help = lang.get( "help.clear" ) )
     parser.add_argument( "-p" , "--push" , required = False , action = "store_true" , help = lang.get( "help.push" ) )
+    parser.add_argument( "-n" , "--new" , required = False , action = "store_true" , help = lang.get( "help.new" ) )
     args = parser.parse_args()
-
+    # call
     if args.clear or args.build or args.push :
-        clear( output )
+        for path in os.listdir( output ) :
+            if path in config( "blacklist_clear" ) : continue
+            if os.path.isfile( s := ( os.path.join( output , path ) ) ) : os.remove( s )
+            else : shutil.rmtree( s )
         if args.clear : exit()
     if args.build or args.push :
-        build( output , src )
+        libs.copytree( src , output )
+        theme.main( config_src )
         if args.build : exit()
     if args.push :
         if repo is None :
@@ -78,3 +74,13 @@ if __name__ == "__main__" :
             print( f"{ '=' * 32 }\n{ '\n'.join( f"| { s }" for s in l ) }{ '=' * 32 }" )
             print( lang.get( "info.git.cli.done" ) )
         exit()
+    if args.new :
+        post_time = libs.time.get_time()
+        libs.checkdir( post := os.path.join( posts , str( post_time ) ) )
+        libs.checkfile( os.path.join( post , "index.md" ) )
+        with libs.config.parser( os.path.join( post , "info.json" ) ) as info :
+            info.add( "id" , hex( post_time )[ 2 : ] , str )
+            info.add( "time" , post_time , int )
+            info.add( "title" , "untitled" , str )
+            info.add( "type" , None , ( None , str ) )
+            info.add( "tags" , [] , list )

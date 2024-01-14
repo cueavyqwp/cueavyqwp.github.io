@@ -5,6 +5,7 @@ help.help = show this help message and exit
 help.clear = clear up
 help.build = clear up and build the blog
 help.push = build and push the repository to remote
+help.new = create a new posts
 
 info.git.cannot_use = git cannot be use, check the config file
 info.git.cli.pull = pull from the remote repository...
