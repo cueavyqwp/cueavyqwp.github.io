@@ -1,3 +1,4 @@
+import subprocess
 import argparse
 import langful
 import shutil
@@ -40,6 +41,7 @@ if __name__ == "__main__" :
     git_local , git_remote = config( "git_local" ) , config( "git_remote" )
     git_state = bool( git_local and git_remote and os.path.exists( git_local ) )
     repo = git.Repo( git_local ) if git_state else None
+    git_exec = git.Git.git_exec_name
     output = str( config( "output" ) )
     posts = str( config( "posts" ) )
     src = str( config( "source" ) )
@@ -63,8 +65,8 @@ if __name__ == "__main__" :
         if repo is None :
             print( lang.get( "info.git.cannot_use" ) )
         else :
-            repo.git.pull()
-            repo.index.add( "*" )
-            repo.commit( f"update `{ libs.time.get_strtime() }`" )
-            repo.git.push( "master" )
+            subprocess.check_call( [ git_exec , "pull" ] )
+            subprocess.check_call( [ git_exec , "add" , "." ] )
+            repo.index.commit( f"update `{ libs.time.get_strtime() }`" )
+            repo.remote().push()
         exit()
