@@ -1,4 +1,5 @@
 import subprocess
+import tempfile
 import argparse
 import langful
 import shutil
@@ -64,8 +65,20 @@ if __name__ == "__main__" :
         if repo is None :
             print( lang.get( "info.git.cannot_use" ) )
         else :
-            subprocess.check_call( [ git_exec , "pull" ] )
-            subprocess.check_call( [ git_exec , "add" , "." ] )
-            repo.index.commit( f"update `{ libs.time.get_strtime() }`" )
+            with tempfile.TemporaryFile( "w+" ) as tmp :
+                print( lang.get( "info.git.cli.pull" ) )
+                subprocess.check_call( [ git_exec , "pull" ] , stdout = tmp )
+                print( lang.get( "info.git.cli.add" ) )
+                subprocess.check_call( [ git_exec , "add" , "." ] )
+                tmp.seek( 0 )
+                l = tmp.readlines()
+            s = f"update `{ libs.time.get_strtime() }`"
+            print( f"{ lang.get( 'info.git.cli.commit.name' ) } \"{ s }\"" )
+            print( lang.get( "info.git.cli.commit" ) )
+            repo.index.commit( s )
+            print( lang.get( "info.git.cli.push" ) )
             repo.remote().push()
+            print( lang.get( "info.git.cli.info" ) )
+            print( f"{ '=' * 32 }\n{ '\n'.join( f"| { s }" for s in l ) }{ '=' * 32 }" )
+            print( lang.get( "info.git.cli.done" ) )
         exit()
