@@ -4,6 +4,7 @@ config
 
 import typing
 import json
+import libs
 
 __all__ = [ "parser" ]
 
@@ -30,7 +31,8 @@ class parser :
             self.dump()
 
     def dump( self ) -> None :
-        with open( self.file , "w" , encoding = "utf-8" ) as fp : json.dump( self.data , fp , indent = 4 , ensure_ascii = False , separators = ( "," , ": " ) )
+        with open( self.file , "w" , encoding = "utf-8" ) as fp : libs.dump( self.data , fp )
 
-    def add( self , name : str , default : typing.Any , type : typing.Any ) -> None :
-        if name not in self.data or not isinstance( self.data[ name ] , type ) : self.data[ name ] = default
+    def add( self , name : str , default : typing.Any , type : typing.Any | tuple[ typing.Any ] ) -> None :
+        if not isinstance( type , tuple ) or not len( type ) : type = ( type , )
+        if name not in self.data or not ( any( obj is None and self.data[ name ] is None or isinstance( self.data[ name ] , obj ) for obj in type ) ) : self.data[ name ] = default

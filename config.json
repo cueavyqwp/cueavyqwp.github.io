@@ -1,7 +1,5 @@
 {
-    "output": "./docs",
-    "buildtime": false,
-    "apipath": "./src/api",
+    "birthday": 1705075200,
     "giscus": {
         "src": "https://giscus.app/client.js",
         "data-repo": "cueavyqwp/cueavyqwp.github.io",
@@ -19,7 +17,12 @@
         "crossorigin": "anonymous",
         "async": null
     },
+    "output": "./docs",
+    "posts": "./posts",
+    "source": "./src",
     "blacklist_clear": [
         "CNAME"
-    ]
+    ],
+    "git_local": "./",
+    "git_remote": "https://github.com/cueavyqwp/cueavyqwp.github.io.git"
 }

@@ -7,6 +7,15 @@ import os
 
 __all__ = [ "copytree" ]
 
+def checkdir( path : str ) -> None :
+    os.makedirs( path , exist_ok = True )
+
+def checkfile( path : str ) -> None :
+    if os.path.exists( path ) :
+        if os.path.isdir( path ) : shutil.rmtree( path )
+        else : return
+    with open( path , "wb" ) : pass
+
 def copytree( src : str , dst : str ) -> None :
     for root , _ , files in os.walk( src ) :
         for file in files :
