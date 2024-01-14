@@ -15,6 +15,9 @@ class parser :
     def __exit__( self , *args : tuple[ typing.Any ] ) -> None :
         self.dump()
 
+    def __str__( self ) -> str :
+        return str( self.data )
+
     def __call__( self , name : str ) -> typing.Any :
         return self.data[ name ]
 
