@@ -4,6 +4,6 @@ parser.description = 一个基础的博客框架
 help.help = 显示此帮助信息并退出
 help.clear = 清理
 help.build = 清理并构建
-help.push = 将本地仓库推送到远程仓库
+help.push = 构建并将本地仓库推送到远程仓库
 
 info.use_git = 无法使用git,请检查配置文件

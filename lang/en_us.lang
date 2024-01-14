@@ -4,6 +4,6 @@ parser.description = a basic blog frame frame
 help.help = show this help message and exit
 help.clear = clear up
 help.build = clear up and build the blog
-help.push = push the repository to remote
+help.push = build and push the repository to remote
 
 info.git.cannot_use = git cannot be use, check the config file

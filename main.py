@@ -54,13 +54,12 @@ if __name__ == "__main__" :
     parser.add_argument( "-p" , "--push" , required = False , action = "store_true" , help = lang.get( "help.push" ) )
     args = parser.parse_args()
 
-    if args.build or args.clear :
-        print(output)
+    if args.clear or args.build or args.push :
         clear( output )
         if args.clear : exit()
-    if args.build :
+    if args.build or args.push :
         build( output , src )
-        exit()
+        if args.build : exit()
     if args.push :
         if repo is None :
             print( lang.get( "info.git.cannot_use" ) )
