@@ -37,12 +37,8 @@ if __name__ == "__main__" :
         config.add( "source" , "./src" , str )
         config.add( "blacklist_clear" , [ "CNAME" ] , list )
         config.data[ "blacklist_clear" ] = [ str( value ) for value in config( "blacklist_clear" ) ]
-        config.add( "git_local" , None , ( str , None ) )
-        config.add( "git_remote" , None , ( str , None ) )
-    git_local , git_remote = config( "git_local" ) , config( "git_remote" )
-    git_state = bool( git_local and git_remote and os.path.exists( git_local ) )
-    repo = git.Repo( git_local ) if git_state else None
-    git_exec = git.Git.git_exec_name
+        config.add( "git_repo" , None , ( str , None ) )
+    repo = git.Repo( git_local ) if ( git_local := config( "repo" ) ) and os.path.exists( git_local ) else None
     output = str( config( "output" ) )
     posts = str( config( "posts" ) )
     src = str( config( "source" ) )
@@ -67,7 +63,7 @@ if __name__ == "__main__" :
         else :
             with tempfile.TemporaryFile( "w+" ) as tmp :
                 print( lang.get( "info.git.cli.pull" ) )
-                subprocess.check_call( [ git_exec , "pull" ] , stdout = tmp )
+                subprocess.check_call( [ git_exec := git.Git.git_exec_name , "pull" ] , stdout = tmp )
                 print( lang.get( "info.git.cli.add" ) )
                 subprocess.check_call( [ git_exec , "add" , "." ] )
                 tmp.seek( 0 )

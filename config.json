@@ -23,6 +23,6 @@
     "blacklist_clear": [
         "CNAME"
     ],
-    "git_local": "./",
-    "git_remote": "https://github.com/cueavyqwp/cueavyqwp.github.io.git"
+    "repo": "./",
+    "git_repo": null
 }
