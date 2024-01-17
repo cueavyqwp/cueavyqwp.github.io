@@ -1,0 +1,37 @@
+body{
+    background-color: azure;
+    flex-direction: column;
+    display: flex;
+}
+#none{
+    min-height: 100vh;
+    flex: 1;
+}
+#main{
+    box-shadow: 0 0 2rem lightgrey;
+    background-color: snow;
+    flex-direction: column;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 16px;
+    border-width: 1px;
+    display: flex;
+    height: 100%;
+    padding: 1%;
+    margin: 2%;
+}
+#title{
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    display: flex;
+}
+#footer{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1px;
+    flex-shrink: 0;
+    display: flex;
+}

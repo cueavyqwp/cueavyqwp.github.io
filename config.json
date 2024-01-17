@@ -17,6 +17,18 @@
         "crossorigin": "anonymous",
         "async": null
     },
+    "mistune_plugins": [
+        "math",
+        "strikethrough",
+        "footnotes",
+        "table",
+        "task_lists",
+        "abbr",
+        "mark",
+        "insert",
+        "superscript",
+        "subscript"
+    ],
     "output": "./docs",
     "posts": "./posts",
     "source": "./src",

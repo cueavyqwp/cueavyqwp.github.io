@@ -2,17 +2,20 @@
 main
 """
 
-import pycmarkgfm
+import mistune
 import libs
 import bs4
 import os
 
+from . import renderer
+
 __all__ = [ "main" ]
 
-def main( src : str = "./config.json" ) -> None :
-    with libs.config.parser( src ) as config :
+def main( configs : str = "./config.json" ) -> None :
+    with libs.config.parser( configs ) as config :
         config.add( "birthday" , libs.get_time() , int )
         config.add( "giscus" , { "src" : "https://giscus.app/client.js", "async" : None } , ( bool , dict ) )
+        config.add( "mistune_plugins" , [] , list )
     src = config( "source" )
     posts : str = config( "posts" )
     output : str = config( "output" )
@@ -21,9 +24,10 @@ def main( src : str = "./config.json" ) -> None :
     if isinstance( giscus , bool ) : giscus = False
     if giscus : giscus = bs4.BeautifulSoup().new_tag( "script" , **giscus )
     # load index.html
-    with open( os.path.join( src , "index.html" ) , "r" , encoding = "utf-8" ) as file : data = file.read()
-    index = bs4.BeautifulSoup( data , "html.parser" )
-    div = index.find( "div" , id = "main" )
+    theme_src = os.path.join( os.path.dirname( __file__ ) , "src" )
+    libs.copytree( theme_src , output )
+    if not os.path.exists( path := os.path.join( src , "theme" , "page.html" ) ) : path = os.path.join( theme_src , "theme" , "page.html" )
+    with open( path , "r" , encoding = "utf-8" ) as file : data_theme = file.read()
     # posts
     post = []
     for path in os.listdir( posts ) :
@@ -31,10 +35,22 @@ def main( src : str = "./config.json" ) -> None :
         if not all( os.path.exists( os.path.join( path , s ) ) for s in ( "index.md" , "info.json" ) ) : continue
         info = libs.config.parser( os.path.join( path , "info.json" ) )
         libs.checkdir( output_path := os.path.join( output , "post" , info( "id" ) ) )
-        with open( os.path.join( path , "index.md" ) , "r" , encoding = "utf-8" ) as fp : data = pycmarkgfm.gfm_to_html( fp.read() )
-        soup = bs4.BeautifulSoup( data , "html.parser" )
-        soup.append( giscus )
-        with open( os.path.join( output_path , "index.html" ) , "wb" ) as fp : fp.write( soup.prettify( "utf-8" ) )
+        with open( os.path.join( path , "index.md" ) , "r" , encoding = "utf-8" ) as fp : data = fp.read()
+        markdown = mistune.create_markdown( renderer = renderer.HTMLRenderer() , plugins = config( "mistune_plugins" ) )
+        soup_post = bs4.BeautifulSoup( data_theme , "html.parser" )
+        div_post = soup_post.find( "div" , id = "post" )
+        div_title = soup_post.find( "div" , id = "title" )
+        div_commit = soup_post.find( "div" , id = "commit" )
+        title = soup_post.find( "title" )
+        title.string = info( "title" )
+        soup_post.append( title )
+        title = bs4.BeautifulSoup().new_tag( "h1" )
+        title.string = info( "title" )
+        div_title.append( title )
+        div_post.append( bs4.BeautifulSoup( markdown( data ) , "html.parser" ) )
+        if giscus : div_commit.append( giscus )
+        else : div_commit.decompose()
+        with open( os.path.join( output_path , "index.html" ) , "wb" ) as fp : fp.write( soup_post.prettify( "utf-8" ) )
     # api
     libs.checkfile( file := os.path.join( output , "api" , "info.json" ) )
     with libs.config.parser( file ) as info :
