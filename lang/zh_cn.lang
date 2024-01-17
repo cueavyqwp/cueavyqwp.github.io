@@ -2,9 +2,12 @@ parser.name = 博客框架
 parser.description = 一个基础的博客框架
 
 help.help = 显示此帮助信息并退出
+help.server = 运行HTTP服务器
+help.server.port = 服务器端口号
 help.clear = 清理
 help.build = 清理并构建
 help.push = 构建并将本地仓库推送到远程仓库
+help.push.commit = 推送信息
 help.new = 创建新文章
 
 info.use_git = 无法使用git,请检查配置文件

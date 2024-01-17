@@ -23,6 +23,5 @@
     "blacklist_clear": [
         "CNAME"
     ],
-    "repo": "./",
-    "git_repo": null
+    "repo": "./"
 }

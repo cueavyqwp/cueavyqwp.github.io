@@ -3,7 +3,6 @@ config
 """
 
 import typing
-import json
 import libs
 
 __all__ = [ "parser" ]
@@ -26,7 +25,7 @@ class parser :
         self.data : dict[ typing.Any , typing.Any ] = {}
         self.file : str = file
         try :
-            with open( file , "r" , encoding = "utf-8" ) as fp : self.data = json.load( fp )
+            with open( file , "r" , encoding = "utf-8" ) as fp : self.data = libs.json.load( fp )
         except :
             self.dump()
 
