@@ -31,24 +31,33 @@ def main( configs : str = "./config.json" ) -> None :
     # posts
     post = []
     for path in os.listdir( posts ) :
+        # load
         path = os.path.join( posts , path )
         if not all( os.path.exists( os.path.join( path , s ) ) for s in ( "index.md" , "info.json" ) ) : continue
         info = libs.config.parser( os.path.join( path , "info.json" ) )
         libs.checkdir( output_path := os.path.join( output , "post" , info( "id" ) ) )
-        with open( os.path.join( path , "index.md" ) , "r" , encoding = "utf-8" ) as fp : data = fp.read()
+        info.data[ "edit_time" ] = int( os.stat( path := os.path.join( path , "index.md" ) ).st_mtime )
+        info.dump()
+        with open( path , "r" , encoding = "utf-8" ) as fp : data = fp.read()
+        # markdown -> html
         markdown = mistune.create_markdown( renderer = renderer.HTMLRenderer() , plugins = config( "mistune_plugins" ) )
         soup_post = bs4.BeautifulSoup( data_theme , "html.parser" )
         div_post = soup_post.find( "div" , id = "post" )
         div_title = soup_post.find( "div" , id = "title" )
         div_commit = soup_post.find( "div" , id = "commit" )
-        title = soup_post.find( "title" )
+        head = soup_post.find( "head" )
+        title = bs4.BeautifulSoup().new_tag( "title" )
         title.string = info( "title" )
-        soup_post.append( title )
+        head.append( title )
         title = bs4.BeautifulSoup().new_tag( "h1" )
         title.string = info( "title" )
         div_title.append( title )
+        if ( description := info( "description" ) ) is not None :
+            p = bs4.BeautifulSoup().new_tag( "p" )
+            p.string = description
+            div_title.append( p )
         div_post.append( bs4.BeautifulSoup( markdown( data ) , "html.parser" ) )
-        if giscus : div_commit.append( giscus )
+        if giscus and info( "commint" ) : div_commit.append( giscus )
         else : div_commit.decompose()
         with open( os.path.join( output_path , "index.html" ) , "wb" ) as fp : fp.write( soup_post.prettify( "utf-8" ) )
     # api

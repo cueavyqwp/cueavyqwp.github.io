@@ -91,8 +91,11 @@ if __name__ == "__main__" :
         libs.checkfile( os.path.join( post , "index.md" ) )
         with libs.config.parser( os.path.join( post , "info.json" ) ) as info :
             info.add( "id" , hex( post_time )[ 2 : ] , str )
-            info.add( "time" , post_time , int )
+            info.add( "post_time" , post_time , int )
+            info.add( "edit_time" , post_time , int )
             info.add( "title" , "untitled" , str )
+            info.add( "description" , None , ( None , str ) )
             info.add( "type" , None , ( None , str ) )
             info.add( "tags" , [] , list )
+            info.add( "commint" , True , bool )
         exit()

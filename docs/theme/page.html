@@ -2,25 +2,39 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
-        <title></title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="/css/index.css">
-        <link rel="stylesheet" type="text/css" href="/css/vs.css">
+        <script type="text/javascript" id="MathJax-script" src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js"></script>
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/highlight.css">
+        <link rel="stylesheet" type="text/css" href="/css/post.css">
     </head>
     <body>
         <header id="header">
         </header>
         <div id="main">
-            <div id="title">
-            </div>
-            <div id="post">
-            </div>
-            <div id="commit">
-            </div>
+            <div id="title"></div>
+            <hr>
+            <div id="post"></div>
+            <hr>
+            <div id="commit"></div>
         </div>
-        <hr>
-        <div id="none"></div>
+        <div id="none">
+            <script>
+                new ClipboardJS("#post .copy-button");
+                var divs = document.getElementsByClassName("highlight");
+                var len = divs.length;
+                for ( var i = 0 ; i < len ; i++ ){
+                    var div = divs.item( i )
+                    var target = "copy-" + i
+                    div.children.item( 0 ).id = target
+                    div.insertAdjacentHTML( "afterbegin" , `<button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa fa-clone\"></i></button>` )
+                };
+            </script>
+        </div>
+        <aside id="menu">
+        </div>
         <footer id="footer">
         </footer>
     </body>

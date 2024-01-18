@@ -4,9 +4,17 @@
   <meta charset="utf-8"/>
   <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
   <meta content="width=device-width, initial-scale=1" name="viewport">
-   <link href="/css/index.css" rel="stylesheet" type="text/css"/>
-   <link href="/css/vs.css" rel="stylesheet" type="text/css"/>
+   <script async="" id="MathJax-script" src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" type="text/javascript">
+   </script>
+   <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js" type="text/javascript">
+   </script>
+   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+   <link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
+   <link href="/css/post.css" rel="stylesheet" type="text/css"/>
   </meta>
+  <title>
+   标题测试
+  </title>
  </head>
  <body>
   <header id="header">
@@ -14,248 +22,183 @@
   <div id="main">
    <div id="title">
     <h1>
-     测试
+     标题测试
     </h1>
+    <p>
+     描述测试
+    </p>
    </div>
+   <hr/>
    <div id="post">
-    <h1 id="测试">
-     测试
+    <h1 id="测试页面">
+     测试页面
     </h1>
     <h1 id="返回">
      <a href="/">
       返回
      </a>
     </h1>
-    <p>
-     测试
-    </p>
-    <blockquote>
-     <p>
-      Test
-123
-     </p>
-    </blockquote>
-    <p>
-     <strong>
-      emoji
-     </strong>
-     : 😂🤣❤️😍😘😉😎😢😜💖😁😀😋🤨😮
-    </p>
-    <p>
-     <del>
-      none
-     </del>
-    </p>
-    <p>
-     <img alt="icon" src="https://blog.cueavy.dedyn.io/favicon.ico"/>
-    </p>
-    <p>
-     <strong>
-      OK
-     </strong>
-    </p>
-    <h2 id="h2">
-     h2
-    </h2>
-    <h3 id="h3">
-     h3
-    </h3>
-    <h4 id="h4">
-     h4
-    </h4>
-    <h1 id="╰(°▽°)╯">
-     ╰(
-     <em>
-      °▽°
-     </em>
-     )╯
+    <h1 id="关于">
+     关于
     </h1>
     <p>
-     LaTeX :
+     此
+     <strong>
+      页面
+     </strong>
+     是
+     <del>
+      用来
+     </del>
+     <ins>
+      测试
+     </ins>
+     功能
+     <sup class="footnote-ref" id="fnref-1">
+      <a href="#fn-1">
+       1
+      </a>
+     </sup>
+     的
+    </p>
+    <p>
+     <img alt="图标" src="/favicon.ico"/>
+    </p>
+    <p>
+     <img alt="img" src="https://github.com/cueavyqwp/cueavyqwp.github.io/assets/127200270/5e7ea25d-b594-40f8-b3a3-64b47e0beab6"/>
+    </p>
+    <hr/>
+    <h1 id="H1">
+     H1
+    </h1>
+    <h2 id="H2">
+     H2
+    </h2>
+    <h3 id="H3">
+     H3
+    </h3>
+    <h4 id="H4">
+     H4
+    </h4>
+    <h5 id="H5">
+     H5
+    </h5>
+    <h6 id="H6">
+     H6
+    </h6>
+    <blockquote>
+     <p>
+      1
+2
+3
+     </p>
+     <blockquote>
+      <p>
+       4
+5
+6
+      </p>
+     </blockquote>
+    </blockquote>
+    <p>
+     LaTeX:
     </p>
     <div class="math">
      $$
-  \begin{matrix}
-   1 &amp; 2 &amp; 3 \\
-   4 &amp; 5 &amp; 6 \\
-   7 &amp; 8 &amp; 9
-  \end{matrix} 
+\begin{gather*}
+\begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix}\quad
+\begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}\\
+\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix}\quad
+\begin{Bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{Bmatrix}\\
+\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}\quad
+\begin{Vmatrix} i &amp; 0 \\ 0 &amp; -i \end{Vmatrix}
+\end{gather*}
 $$
     </div>
     <div class="math">
      $$
-\begin{Bmatrix}
-   a &amp; b \\
-   c &amp; d
-\end{Bmatrix}
+\begin{array}{*{20}{l}}
+{{}_{ }^{ } \int _{ }^{ }k \text{d} x=kx+C}\\
+{{}_{ }^{ } \int _{ }^{ }\mathop{{x}}\nolimits^{{ \mu }} \text{d} x=\frac{{\mathop{{x}}\nolimits^{{ \mu +1}}}}{{ \mu +1}}+C,{ \left( { \mu  \neq -1} \right) }}\\
+{{}_{ }^{ } \int _{ }^{ }\frac{{1}}{{x}} \text{d} x= \text{ln} { \left| {x} \right| }+C}\\
+{{}_{ }^{ } \int _{ }^{ }\frac{{1}}{{1+\mathop{{x}}\nolimits^{{2}}}} \text{d} x= \text{arctan} x+C}\\
+{{}_{ }^{ } \int _{ }^{ }\frac{{1}}{{\sqrt{{1-\mathop{{x}}\nolimits^{{2}}}}}} \text{d} x= \text{arcsin} x+C}
+\end{array}
 $$
     </div>
     <div class="math">
      $$
-\begin{CD}
-   A @&gt;a&gt;&gt; B \\
-@VbVV @AAcA \\
-   C @= D
-\end{CD}
+\overrightarrow{P_0P} \ \underrightarrow{P_0P} \ \overline{P_0P}
 $$
     </div>
-    <ul>
-     <li>
-      第一项
-     </li>
-     <li>
-      <ul>
-       <li>
-        第一一项
-       </li>
-      </ul>
-     </li>
-     <li>
-      <ul>
-       <li>
-        第一二项
-       </li>
-      </ul>
-     </li>
-     <li>
-      <ul>
-       <li>
-        第一三项
-       </li>
-      </ul>
-     </li>
-     <li>
-      第二项
-     </li>
-     <li>
-      <ul>
-       <li>
-        第二一项
-       </li>
-      </ul>
-     </li>
-     <li>
-      第三项
-     </li>
-    </ul>
-    <table>
-     <thead>
-      <tr>
-       <th style="text-align:center">
-        num\word
-       </th>
-       <th style="text-align:center">
-        a
-       </th>
-       <th style="text-align:center">
-        b
-       </th>
-       <th style="text-align:center">
-        c
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td style="text-align:center">
-        1
-       </td>
-       <td style="text-align:center">
-        1a
-       </td>
-       <td style="text-align:center">
-        1b
-       </td>
-       <td style="text-align:center">
-        1c
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:center">
-        2
-       </td>
-       <td style="text-align:center">
-        2a
-       </td>
-       <td style="text-align:center">
-        2b
-       </td>
-       <td style="text-align:center">
-        2c
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:center">
-        3
-       </td>
-       <td style="text-align:center">
-        3a
-       </td>
-       <td style="text-align:center">
-        3b
-       </td>
-       <td style="text-align:center">
-        3c
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:center">
-        4
-       </td>
-       <td style="text-align:center">
-        4a
-       </td>
-       <td style="text-align:center">
-        4b
-       </td>
-       <td style="text-align:center">
-        4c
-       </td>
-      </tr>
-     </tbody>
-    </table>
     <div class="highlight">
-     <pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"a"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"awa"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"b"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"c"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"d"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"e"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">"e1"</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">"e2"</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">"f"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"a"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"awa"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"b"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"c"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"d"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"e"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">"e1"</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">"e2"</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+     <pre><span></span><span class="sd">"""</span>
+<span class="sd">renderer</span>
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">pygments.formatters</span>
+<span class="kn">import</span> <span class="nn">pygments.lexers</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">import</span> <span class="nn">pygments</span>
+<span class="kn">import</span> <span class="nn">mistune</span>
+<span class="kn">import</span> <span class="nn">bs4</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"HTMLRenderer"</span> <span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">HTMLRenderer</span><span class="p">(</span> <span class="n">mistune</span><span class="o">.</span><span class="n">HTMLRenderer</span> <span class="p">)</span> <span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">block_code</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">code</span> <span class="p">:</span> <span class="nb">str</span> <span class="p">,</span> <span class="n">info</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="p">:</span>
+        <span class="k">try</span> <span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span> <span class="n">info</span> <span class="p">,</span> <span class="nb">str</span> <span class="p">)</span>
+            <span class="n">lexer</span> <span class="o">=</span> <span class="n">pygments</span><span class="o">.</span><span class="n">lexers</span><span class="o">.</span><span class="n">get_lexer_by_name</span><span class="p">(</span> <span class="n">info</span> <span class="p">)</span>
+            <span class="n">formatter</span> <span class="o">=</span> <span class="n">pygments</span><span class="o">.</span><span class="n">formatters</span><span class="o">.</span><span class="n">HtmlFormatter</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">pygments</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span> <span class="n">code</span> <span class="p">,</span> <span class="n">lexer</span> <span class="p">,</span> <span class="n">formatter</span> <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="p">:</span>
+            <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">&lt;pre&gt;&lt;code&gt;</span><span class="si">{</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="si">}</span><span class="s2">&lt;/code&gt;&lt;/pre&gt;"</span>
+
+    <span class="k">def</span> <span class="nf">heading</span><span class="p">(</span> <span class="bp">self</span> <span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span> <span class="o">*</span><span class="n">args</span> <span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">ret</span> <span class="p">,</span> <span class="s2">"html.parser"</span> <span class="p">)</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="sa">f</span><span class="s2">"h</span><span class="si">{</span><span class="w"> </span><span class="n">kwargs</span><span class="p">[</span><span class="w"> </span><span class="s1">'level'</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="si">}</span><span class="s2">"</span> <span class="p">)</span>
+        <span class="n">head</span><span class="p">[</span> <span class="s2">"id"</span> <span class="p">]</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">return</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">(</span> <span class="s2">"utf-8"</span> <span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 </pre>
     </div>
-    <div class="highlight">
-     <pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="nb">print</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="p">)</span>
-<span class="nb">input</span><span class="p">()</span>
-</pre>
-    </div>
+    <section class="footnotes">
+     <ol>
+      <li id="fn-1">
+       <p>
+        脚注测试
+        <a class="footnote" href="#fnref-1">
+         ↩
+        </a>
+       </p>
+      </li>
+     </ol>
+    </section>
    </div>
+   <hr/>
    <div id="commit">
     <script async crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOK5Ok4c4CbtDg" data-emit-metadata="0" data-input-position="bottom" data-lang="zh-CN" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="cueavyqwp/cueavyqwp.github.io" data-repo-id="R_kgDOK5Ok4Q" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
     </script>
    </div>
   </div>
-  <hr/>
   <div id="none">
+   <script>
+    new ClipboardJS("#post .copy-button");
+                var divs = document.getElementsByClassName("highlight");
+                var len = divs.length;
+                for ( var i = 0 ; i < len ; i++ ){
+                    var div = divs.item( i )
+                    var target = "copy-" + i
+                    div.children.item( 0 ).id = target
+                    div.insertAdjacentHTML( "afterbegin" , `<button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa fa-clone\"></i></button>` )
+                };
+   </script>
   </div>
-  <footer id="footer">
-  </footer>
+  <aside id="menu">
+   <footer id="footer">
+   </footer>
+  </aside>
  </body>
 </html>
-<title>
- 测试
-</title>
