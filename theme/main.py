@@ -53,7 +53,7 @@ def main( configs : str = "./config.json" ) -> None :
         title.string = info( "title" )
         div_title.append( title )
         if ( description := info( "description" ) ) is not None :
-            p = bs4.BeautifulSoup().new_tag( "p" )
+            p = bs4.BeautifulSoup().new_tag( "p" , id = "description" )
             p.string = description
             div_title.append( p )
         div_post.append( bs4.BeautifulSoup( markdown( data ) , "html.parser" ) )

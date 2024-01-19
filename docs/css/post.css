@@ -5,27 +5,11 @@ body{
     word-wrap: break-word;
     flex-wrap: nowrap;
     font-size: 16px;
-    display: flex;
+    margin: 0;
 }
-hr {
+hr{
     margin-right: 1%;
     margin-left: 1%;
-}
-#none{
-    min-height: 100vh;
-}
-#main{
-    box-shadow: 0 0 2rem lightgrey;
-    background-color: snow;
-    flex-direction: column;
-    border-style: solid;
-    border-color: gray;
-    border-radius: 16px;
-    border-width: 1px;
-    display: flex;
-    height: 100%;
-    padding: 1%;
-    margin: 2%;
 }
 #title{
     justify-content: center;
@@ -35,9 +19,32 @@ hr {
     line-height: 1px;
     flex-wrap: wrap;
     display: flex;
+    height: 200px;
+    width: 100%;
+    margin: 0;
 }
-#title p{
+#title #description{
     color: grey;
+}
+#post, #commit{
+    box-shadow: 0 0 2rem lightgrey;
+    background-color: snow;
+    flex-direction: column;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 16px;
+    border-width: 1px;
+    overflow: auto;
+    padding: 16px;
+    display: flex;
+    margin: 24px;
+    height: 100%;
+}
+#post .heading i{
+    opacity: 0%;
+}
+#post .heading i:hover{
+    opacity: 100%;
 }
 #menu{
     justify-content: center;

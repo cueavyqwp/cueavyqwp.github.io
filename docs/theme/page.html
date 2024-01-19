@@ -5,6 +5,7 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script type="text/javascript" id="MathJax-script" src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+        <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js" async></script>
         <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js"></script>
         <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="/css/highlight.css">
@@ -13,28 +14,41 @@
     <body>
         <header id="header">
         </header>
+        <div id="title"></div>
         <div id="main">
-            <div id="title"></div>
-            <hr>
             <div id="post"></div>
-            <hr>
             <div id="commit"></div>
         </div>
         <div id="none">
             <script>
-                new ClipboardJS("#post .copy-button");
+                var clipboard = new ClipboardJS("#post .copy-button");
+                clipboard.on("success" , function( event ) {
+                    event.clearSelection();
+                });
+                clipboard.on( "error" , function( event ) {
+                    console.info( event );
+                });
                 var divs = document.getElementsByClassName("highlight");
                 var len = divs.length;
                 for ( var i = 0 ; i < len ; i++ ){
-                    var div = divs.item( i )
-                    var target = "copy-" + i
-                    div.children.item( 0 ).id = target
-                    div.insertAdjacentHTML( "afterbegin" , `<button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa fa-clone\"></i></button>` )
+                    var div = divs.item( i );
+                    var target = "copy-" + i;
+                    div.children.item( 0 ).id = target;
+                    div.insertAdjacentHTML( "afterbegin" , `<button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa-regular fa-clipboard fa-fw\"></i></button>` );
+                };
+            </script>
+            <script>
+                var headings = document.querySelectorAll("#post h1, h2, h3, h4, h5, h6");
+                var len = headings.length;
+                for ( var i = 0 ; i < len ; i++ ){
+                    var heading = headings.item( i );
+                    heading.innerHTML += `<a href=\"#${heading.id}\"></i><i class=\"fa-solid fa-link fa-fw\">awa</i></a>`
                 };
             </script>
         </div>
         <aside id="menu">
         </div>
+        <hr>
         <footer id="footer">
         </footer>
     </body>

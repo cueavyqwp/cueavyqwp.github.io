@@ -6,29 +6,32 @@
 }
 .highlight{
     box-shadow: 0 0 1rem lightgrey;
+    background: #F2F4F5;
     border-radius: 4px;
     position: relative;
     padding: 2%;
     margin: 1%;
 }
-.copy-button i{
-    color: black;
-    font-size: 32px;
-}
 .copy-button{
     background-color: transparent;
     position: absolute;
     border-style: none;
-    height: 32px;
-    width: 32px;
-    right: 12px;
-    top: 4px;
+    height: 24px;
+    width: 24px;
+    right: 16px;
+    top: 16px;
+}
+.copy-button i{
+    align-self: center;
+    font-size: 24px;
+    color: black;
 }
 .copy-button i:hover{
-    filter: invert(50%);
+    text-shadow: 0 0 1rem lightgrey;
+    opacity: 50%;
 }
 .copy-button i:active{
-    filter: invert(70%);
+    opacity: 30%;
 }
 /* style from pygments builtin style emacs */
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
