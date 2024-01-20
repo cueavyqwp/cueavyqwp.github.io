@@ -40,8 +40,8 @@ hr{
 }
 .copy-button i{
     align-self: center;
-    color: #90a4ae;
     font-size: 24px;
+    color: black;
 }
 .copy-button i:hover{
     text-shadow: 0 0 1rem lightgrey;
