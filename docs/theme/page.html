@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script type="text/javascript" id="MathJax-script" src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+        <script src="/js/mathjax-config.js" defer></script>
+        <script type="text/javascript" id="MathJax-script" src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-svg.js" defer></script>
         <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js" async></script>
         <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.js"></script>
         <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="/css/highlight.css">
+        <link rel="stylesheet" type="text/css" href="/css/element.css">
         <link rel="stylesheet" type="text/css" href="/css/post.css">
     </head>
     <body>
@@ -34,7 +36,7 @@
                     var div = divs.item( i );
                     var target = "copy-" + i;
                     div.children.item( 0 ).id = target;
-                    div.insertAdjacentHTML( "afterbegin" , `<button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa-regular fa-clipboard fa-fw\"></i></button>` );
+                    div.insertAdjacentHTML( "afterbegin" , `<div class=\"code-toolsbar\"><button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa-regular fa-clipboard fa-fw\"></i></button></div>` );
                 };
             </script>
             <script>

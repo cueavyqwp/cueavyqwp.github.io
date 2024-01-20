@@ -1,15 +1,12 @@
 body{
-    font-family: "Microsoft YaHei", "微软雅黑", "Helvetica";
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
     background-color: azure;
     flex-direction: column;
     word-wrap: break-word;
+    overflow-x: hidden;
     flex-wrap: nowrap;
     font-size: 16px;
     margin: 0;
-}
-hr{
-    margin-right: 1%;
-    margin-left: 1%;
 }
 #title{
     justify-content: center;
@@ -30,8 +27,8 @@ hr{
     box-shadow: 0 0 2rem lightgrey;
     background-color: snow;
     flex-direction: column;
-    border-style: solid;
     border-color: gray;
+    border-style: solid;
     border-radius: 16px;
     border-width: 1px;
     overflow: auto;
@@ -39,12 +36,6 @@ hr{
     display: flex;
     margin: 24px;
     height: 100%;
-}
-#post .heading i{
-    opacity: 0%;
-}
-#post .heading i:hover{
-    opacity: 100%;
 }
 #menu{
     justify-content: center;

@@ -1,0 +1,71 @@
+hr{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+.heading i{
+    opacity: 0%;
+}
+.heading i:hover{
+    opacity: 100%;
+}
+.footnotes{
+    font-size: 14px;
+    color: gray;
+}
+#post .heading{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+#post a{
+    text-decoration: none;
+    color: #49b1f5
+}
+#post a:hover{
+    text-decoration: underline;
+}
+#post blockquote{
+    border-left: 3px solid #c4c7ce;
+    background-color: #EDEDED;
+    border-radius: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.copy-button{
+    background-color: transparent;
+    border-style: none;
+    height: 24px;
+    width: 24px;
+    right: 16px;
+    top: 16px;
+}
+.copy-button i{
+    align-self: center;
+    color: #90a4ae;
+    font-size: 24px;
+}
+.copy-button i:hover{
+    text-shadow: 0 0 1rem lightgrey;
+    color: #80c8f8;
+}
+.copy-button i:active{
+    opacity: 30%;
+}
+.code-toolsbar {
+    background-color: #e6ebf1;
+    border-radius: 4px;
+    padding: 2px;
+}
+.highlight{
+    box-shadow: 0 0 0.5rem #f6f8fa;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background: #F2F4F5;
+    margin: 4px;
+}
+.highlight pre{
+    font-family: "Consolas", "Lucida Sans Typewriter", monospace, sans-serif;
+    line-height: 125%;
+    overflow-x: auto;
+    font-size: 14px;
+    margin: 4px;
+}
