@@ -59,7 +59,7 @@ def main( configs : str = "./config.json" ) -> None :
         div_post.append( bs4.BeautifulSoup( markdown( data ) , "html.parser" ) )
         if giscus and info( "commint" ) : div_commit.append( giscus )
         else : div_commit.decompose()
-        with open( os.path.join( output_path , "index.html" ) , "wb" ) as fp : fp.write( soup_post.prettify( "utf-8" ) )
+        with open( os.path.join( output_path , "index.html" ) , "wb" ) as fp : fp.write( soup_post.encode( "utf-8" ) )
     # api
     libs.checkfile( file := os.path.join( output , "api" , "info.json" ) )
     with libs.config.parser( file ) as info :

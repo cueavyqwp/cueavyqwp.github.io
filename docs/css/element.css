@@ -1,6 +1,12 @@
 hr{
-    margin-right: 1%;
-    margin-left: 1%;
+    margin: 0% 1% 0% 1%;
+}
+a{
+    text-decoration: none;
+    color: #49b1f5
+}
+a:hover{
+    text-decoration: underline;
 }
 .heading i{
     opacity: 0%;
@@ -15,13 +21,6 @@ hr{
 #post .heading{
     margin-bottom: 6px;
     margin-top: 6px;
-}
-#post a{
-    text-decoration: none;
-    color: #49b1f5
-}
-#post a:hover{
-    text-decoration: underline;
 }
 #post blockquote{
     border-left: 3px solid #c4c7ce;

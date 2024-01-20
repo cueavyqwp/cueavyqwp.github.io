@@ -26,8 +26,7 @@ class HTMLRenderer( mistune.HTMLRenderer ) :
     def heading( self , *args : tuple[ str ] , level : int ) -> str :
         title = bs4.BeautifulSoup( "".join( *args ) , "html.parser" )
         soup = bs4.BeautifulSoup( "" , "html.parser" )
-        heading = bs4.BeautifulSoup().new_tag( f"h{ level }" , id = title.string )
-        heading[ "class" ] = "heading"
-        heading.append( title )
+        heading = bs4.BeautifulSoup( f"<h{ level } class=\"heading\" id=\"{ title.string }\"></h{ level }>" , "html.parser" )
+        heading.find( f"h{ level }" ).append( title )
         soup.append( heading )
-        return soup.prettify( "utf-8" ).decode()
+        return str( soup )

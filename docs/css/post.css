@@ -6,6 +6,7 @@ body{
     overflow-x: hidden;
     flex-wrap: nowrap;
     font-size: 16px;
+    display: flex;
     margin: 0;
 }
 #title{
@@ -13,6 +14,7 @@ body{
     flex-direction: column;
     align-content: center;
     align-items: center;
+    overflow: hidden;
     line-height: 1px;
     flex-wrap: wrap;
     display: flex;
@@ -38,9 +40,19 @@ body{
     height: 100%;
 }
 #menu{
+    box-shadow: 0 0 2rem lightgrey;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+}
+#menu-body{
+    background-color: snow;
     justify-content: center;
     flex-direction: column;
-    align-content: center;
+    align-content: start;
+    position: absolute;
+    max-height: 90%;
+    overflow: hidden;
     flex-wrap: wrap;
     display: flex;
 }
@@ -48,6 +60,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     line-height: 1px;
     flex-shrink: 0;
     display: flex;
