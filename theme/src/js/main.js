@@ -3,7 +3,6 @@ var len = headings.length;
 for ( var i = 0 ; i < len ; i++ ){
     var heading = headings.item( i );
     heading.innerHTML += `<a href=\"#${heading.id}\"></i><i class=\"fa-solid fa-link fa-fw\"></i></a>`;
-    menu.children.item( 1 ).insertAdjacentHTML( "beforeend" , `<a href=\"#${heading.id}\" class=\"menu-${heading.nodeName.toLowerCase()}\">${heading.innerText}</a>` );
 };
 
 var clipboard = new ClipboardJS("#post .copy-button");
