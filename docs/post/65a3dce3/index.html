@@ -155,36 +155,15 @@ $$
    </div>
   </div>
   <div id="none">
-   <script>
-    var clipboard = new ClipboardJS("#post .copy-button");
-                clipboard.on("success" , function( event ) {
-                    event.clearSelection();
-                });
-                clipboard.on( "error" , function( event ) {
-                    console.info( event );
-                });
-                var divs = document.getElementsByClassName("highlight");
-                var len = divs.length;
-                for ( var i = 0 ; i < len ; i++ ){
-                    var div = divs.item( i );
-                    var target = "copy-" + i;
-                    div.children.item( 0 ).id = target;
-                    div.insertAdjacentHTML( "afterbegin" , `<div class=\"code-toolsbar\"><button class=\"copy-button\" type=\"button\" data-clipboard-target=\"#${target}\"><i class=\"fa-regular fa-clipboard fa-fw\"></i></button></div>` );
-                };
+   <script async="" src="/js/toolsbar.js" type="text/javascript">
    </script>
-   <script>
-    var headings = document.querySelectorAll("#post h1, h2, h3, h4, h5, h6");
-                var len = headings.length;
-                for ( var i = 0 ; i < len ; i++ ){
-                    var heading = headings.item( i );
-                    heading.innerHTML += `<a href=\"#${heading.id}\"></i><i class=\"fa-solid fa-link fa-fw\"></i></a>`
-                };
+   <script async="" src="/js/menu.js" type="text/javascript">
    </script>
   </div>
   <aside id="menu">
-   <hr/>
-   <footer id="footer">
-   </footer>
   </aside>
+  <hr/>
+  <footer id="footer">
+  </footer>
  </body>
 </html>
