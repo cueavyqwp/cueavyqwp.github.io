@@ -1,0 +1,67 @@
+body{
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    background-color: azure;
+    flex-direction: column;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    font-size: 16px;
+    display: flex;
+    margin: 0;
+}
+#title{
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    line-height: 1px;
+    flex-wrap: wrap;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    margin: 0;
+}
+#title #description{
+    color: grey;
+}
+#post, #commit{
+    box-shadow: 0 0 2rem lightgrey;
+    background-color: snow;
+    flex-direction: column;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 16px;
+    border-width: 1px;
+    overflow: auto;
+    padding: 16px;
+    display: flex;
+    margin: 24px;
+    height: 100%;
+}
+#menu{
+    box-shadow: 0 0 2rem lightgrey;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+}
+#menu-body{
+    background-color: snow;
+    justify-content: center;
+    flex-direction: column;
+    align-content: start;
+    position: absolute;
+    max-height: 90%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    display: flex;
+}
+#footer{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    line-height: 1px;
+    flex-shrink: 0;
+    display: flex;
+}

@@ -1,0 +1,11 @@
+/*
+
+!source
+!LICENSE
+!.github
+!README.md
+!.gitignore
+!requirements.txt
+
+*__pycache__
+*.py[cod]

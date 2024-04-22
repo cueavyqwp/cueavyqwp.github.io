@@ -1,0 +1,78 @@
+hr{
+    margin: 0% 1% 0% 1%;
+}
+a{
+    text-decoration: none;
+    color: #49b1f5
+}
+a:hover{
+    text-decoration: underline;
+}
+.heading i{
+    opacity: 0%;
+}
+.heading i:hover{
+    opacity: 100%;
+}
+.footnotes{
+    font-size: 14px;
+    color: gray;
+}
+#post .heading{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+#post blockquote{
+    border-left: 3px solid #c4c7ce;
+    background-color: #EDEDED;
+    border-radius: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.copy-button{
+    background-color: transparent;
+    border-style: none;
+    height: 24px;
+    width: 24px;
+}
+.copy-button i{
+    font-size: 16px;
+    color: black;
+}
+.copy-button i:hover{
+    text-shadow: 0 0 1rem lightgrey;
+    color: #80c8f8;
+}
+.copy-button i:active{
+    opacity: 50%;
+}
+.packup-button{
+    background-color: transparent;
+    border-style: none;
+    height: 24px;
+    width: 24px;
+}
+.packup-button i{
+    font-size: 16px;
+    color: black;
+}
+.code-toolsbar {
+    background-color: #e6ebf1;
+    justify-content: flex-end;
+    flex-direction: row;
+    border-radius: 4px;
+    display: flex;
+    padding: 2px;
+}
+.highlight{
+    background: #F2F4F5;
+    border-radius: 4px;
+    margin: 4px;
+}
+.highlight pre{
+    font-family: "Consolas", "Lucida Sans Typewriter", monospace, sans-serif;
+    line-height: 125%;
+    overflow-x: auto;
+    font-size: 14px;
+    margin: 8px;
+}

@@ -1,0 +1,7 @@
+{
+    "theme": "default",
+    "output": "output",
+    "blacklist": [
+        ".git"
+    ]
+}
