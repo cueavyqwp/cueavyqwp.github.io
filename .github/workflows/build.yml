@@ -28,12 +28,12 @@ jobs:
         with:
           python-version: "3.12"
         name: Setup python
+      - name: Install requirements
+        run: python -m pip install -r requirements.txt
       - name: Build
-        run: |
-          python -m pip install -r requirements.txt
-          python simplog/blog.py --build
+        run: python simplog/blog.py --build
       - uses: actions/configure-pages@v5
-        name: Setup Pages
+        name: Setup pages
       - uses: actions/upload-pages-artifact@v3
         name: Upload artifact
         with:

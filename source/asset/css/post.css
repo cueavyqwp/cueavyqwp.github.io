@@ -26,12 +26,12 @@ body{
     color: grey;
 }
 #post, #commit{
-    box-shadow: 0 0 2rem lightgrey;
+    box-shadow: 0 0 4px lightgrey;
     background-color: snow;
     flex-direction: column;
     border-color: gray;
     border-style: solid;
-    border-radius: 16px;
+    border-radius: 8px;
     border-width: 1px;
     overflow: auto;
     padding: 16px;
@@ -40,7 +40,7 @@ body{
     height: 100%;
 }
 #menu{
-    box-shadow: 0 0 2rem lightgrey;
+    box-shadow: 0 0 4px lightgrey;
     position: absolute;
     height: 50%;
     width: 50%;
