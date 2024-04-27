@@ -2,7 +2,15 @@
 
 欢迎来到此博客
 
-[测试页面](/post/66253ae5)
+本博客使用了自己写的[simplog](https://github.com/cueavy/simplog)博客框架
+
+目前还比较简陋,该有的功能都还没写
+
+# 文章
+
+[初版simplog终于写好了](/post/662cbd79)
+
+# 测试
 
 > 1
 > > 2

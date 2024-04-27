@@ -1,12 +1,24 @@
-hr{
-    margin: 0% 1% 0% 1%;
-}
 a{
     text-decoration: none;
     color: #49b1f5
 }
 a:hover{
     text-decoration: underline;
+}
+code{
+    background: #eeeeee;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 2px;
+}
+hr{
+    margin: 0% 1% 0% 1%;
+}
+p{
+    margin: 4px 0px 4px 0px;
+}
+.heading {
+    margin: 4px 0px 4px 0px;
 }
 .heading i{
     opacity: 0%;
@@ -17,6 +29,26 @@ a:hover{
 .footnotes{
     font-size: 14px;
     color: gray;
+}
+#menu-button{
+    background-color: transparent;
+    position: absolute;
+    border-style: none;
+    height: 24px;
+    width: 24px;
+    right: 0px;
+    top: 0px;
+}
+#menu-button i:hover{
+    text-shadow: 0 0 4px lightgrey;
+    color: #80c8f8;
+}
+#menu-button i:active{
+    opacity: 50%;
+}
+#menu p{
+    color: gray;
+    margin: 0;
 }
 #post .heading{
     margin-bottom: 6px;
@@ -40,7 +72,7 @@ a:hover{
     color: black;
 }
 .copy-button i:hover{
-    text-shadow: 0 0 1rem lightgrey;
+    text-shadow: 0 0 4px lightgrey;
     color: #80c8f8;
 }
 .copy-button i:active{
@@ -55,6 +87,13 @@ a:hover{
 .packup-button i{
     font-size: 16px;
     color: black;
+}
+.packup-button i:hover{
+    text-shadow: 0 0 4px lightgrey;
+    color: #80c8f8;
+}
+.packup-button i:active{
+    opacity: 50%;
 }
 .code-toolsbar {
     background-color: #e6ebf1;

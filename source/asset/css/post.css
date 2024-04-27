@@ -1,12 +1,10 @@
 body{
-    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    font-family: "Microsoft YaHei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
     background-color: azure;
-    flex-direction: column;
     word-wrap: break-word;
     overflow-x: hidden;
     flex-wrap: nowrap;
     font-size: 16px;
-    display: flex;
     margin: 0;
 }
 #title{
@@ -14,8 +12,8 @@ body{
     flex-direction: column;
     align-content: center;
     align-items: center;
+    line-height: 16px;
     overflow: hidden;
-    line-height: 1px;
     flex-wrap: wrap;
     display: flex;
     height: 200px;
@@ -25,36 +23,34 @@ body{
 #title #description{
     color: grey;
 }
-#post, #commit{
+#main{
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    display: flex;
+}
+#body{
+    overflow: auto;
+    width: 100%;
+}
+#menu{
+    width: 300px;
+}
+#post, #commit, #menu{
     box-shadow: 0 0 4px lightgrey;
     background-color: snow;
     flex-direction: column;
     border-color: gray;
-    border-style: solid;
+    position: relative;
     border-radius: 8px;
     border-width: 1px;
     overflow: auto;
     padding: 16px;
     display: flex;
     margin: 24px;
-    height: 100%;
-}
-#menu{
-    box-shadow: 0 0 4px lightgrey;
-    position: absolute;
-    height: 50%;
-    width: 50%;
-}
-#menu-body{
-    background-color: snow;
-    justify-content: center;
-    flex-direction: column;
-    align-content: start;
-    position: absolute;
-    max-height: 90%;
-    overflow: hidden;
-    flex-wrap: wrap;
-    display: flex;
 }
 #footer{
     justify-content: center;
