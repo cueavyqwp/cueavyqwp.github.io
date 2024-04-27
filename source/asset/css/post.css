@@ -36,9 +36,6 @@ body{
     overflow: auto;
     width: 100%;
 }
-#menu{
-    width: 300px;
-}
 #post, #commit, #menu{
     box-shadow: 0 0 4px lightgrey;
     background-color: snow;
@@ -51,6 +48,10 @@ body{
     padding: 16px;
     display: flex;
     margin: 24px;
+}
+#menu{
+    width: 300px;
+    margin-left: 0;
 }
 #footer{
     justify-content: center;
