@@ -7,5 +7,6 @@
         "simplog",
         "杂谈"
     ],
-    "commint": true
+    "comment": true,
+    "files": null
 }

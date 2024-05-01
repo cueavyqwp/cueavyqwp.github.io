@@ -1,8 +1,5 @@
 {
-    "id": null,
-    "time": null,
     "title": "欢迎",
     "description": null,
-    "tags": [],
-    "commint": true
+    "comment": true
 }
