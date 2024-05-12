@@ -8,9 +8,20 @@
 
 # 文章
 
-[初版simplog终于写好了](/post/662cbd79)
+*简单用js写了个动态目录*
 
-[在命令行播放视频](/post/66324893)
+<div id = "posts" ></div>
+
+<script>
+    fetch( "/api/post.json" )
+        .then( ( response ) => response.json() )
+        .then( ( data ) => {
+            var div = document.getElementById( "posts" );
+            for ( var i = 0 ; i < data.length ; i++ ){
+                div.insertAdjacentHTML( "beforeend" , `<p><a href="/post/${ data[ i ][ "id" ] }">${ data[ i ][ "title" ] }</a> 简介: ${ data[ i ][ "description" ] } 标签: [${ data[ i ][ "tags" ] }] 日期: ${ new Date( data[ i ]["time"] * 1000 ).toLocaleString() }</p>` );
+            }
+        } );
+</script>
 
 # 测试
 

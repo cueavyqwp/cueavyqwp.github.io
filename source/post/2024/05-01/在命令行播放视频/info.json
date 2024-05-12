@@ -4,7 +4,11 @@
     "comment": true,
     "id": "66324893",
     "time": 1714571411,
-    "tags": [],
+    "tags": [
+        "编程",
+        "python",
+        "命令行"
+    ],
     "files": [
         "img.gif"
     ]
